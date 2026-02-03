@@ -1,0 +1,113 @@
+[{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman1",
+    "price" : 57.4,
+    "img" : ["assets/women/product-01.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman1",
+    "price" : 10.13,
+    "img" : ["assets/women/product-02.webp", "", ""]
+},
+{
+    "type" : "man",
+    "name" : "man T-shirt",
+    "description" : "man1",
+    "price" : 15.2,
+    "img" : ["assets/men/product-03.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman1",
+    "price" : 25.8,
+    "img" : ["assets/women/product-04.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman1",
+    "price" : 23.7,
+    "img" : ["assets/women/product-05.webp", "", ""]
+},
+{
+    "type" : "watch",
+    "name" : "watch",
+    "description" : "watch1",
+    "price" : 40.0,
+    "img" : ["assets/watches/product-06.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman1",
+    "price" : 35.4,
+    "img" : ["assets/women/product-07.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman1",
+    "price" : 39.9,
+    "img" : ["assets/women/product-08.webp", "", ""]
+},
+{
+    "type" : "shoe",
+    "name" : "shoe",
+    "description" : "shoes",
+    "price" : 52.6,
+    "img" : ["assets/shoes/product-09.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman",
+    "price" : 70.3,
+    "img" : ["assets/women/product-10.webp", "", ""]
+},
+{
+    "type" : "man",
+    "name" : "man Belt",
+    "description" : "man",
+    "price" : 27.8,
+    "img" : ["assets/men/product-11.webp", "", ""]
+},
+{
+    "type" : "man",
+    "name" : "man T-shirt",
+    "description" : "man",
+    "price" : 18.3,
+    "img" : ["assets/men/product-12.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman",
+    "price" : 26.0,
+    "img" : ["assets/women/product-13.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman",
+    "price" : 20.1,
+    "img" : ["assets/women/product-14.webp", "", ""]
+},
+{
+    "type" : "watch",
+    "name" : "watch",
+    "description" : "watch1",
+    "price" : 74.2,
+    "img" : ["assets/watches/product-15.webp", "", ""]
+},
+{
+    "type" : "woman",
+    "name" : "woman T-shirt",
+    "description" : "woman",
+    "price" : 42.7,
+    "img" : ["assets/women/product-16.webp", "", ""]
+}
+]
