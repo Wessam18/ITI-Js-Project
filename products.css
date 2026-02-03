@@ -1,0 +1,143 @@
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+
+}
+.NavButtons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 20px; */
+}
+.NavButtons .ProductsNav a{
+    color: #888;
+    text-decoration: none;
+    margin: 10px;
+    transition-property: all;
+    transition-duration: 1s;
+    cursor: pointer;
+
+}
+.NavButtons .ProductsNav a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.FilterAndSearch{
+    display: inline-flex;
+    gap: 10px;
+}
+
+.FilterAndSearch button,input{
+    background: transparent;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    width: 95px;
+    height: 40px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.FilterAndSearch input{
+    width: 200px;
+    height: 37px;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    transform: scale(0) ;
+}
+
+.FilterAndSearch button:hover{
+    background: rgb(0, 24, 52);
+    transition: all 0.7s;
+    color: white;
+    cursor: pointer;
+    /* content: icon; */
+}
+.FilterAndSearch button:hover i{
+    color: white;
+    transition: all 0.7s;
+}
+.FilterAndSearch.show-search input{
+    visibility: visible;
+    transform: scale(1);
+}
+
+.filterSidebar{
+    padding: 20px;
+    position: fixed;
+    top: 50px;
+    right: -370px;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    background: rgba(0, 24, 52, 0.65);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+    transition: right 0.4s ease;
+    z-index: 1001;
+}
+
+.filterSidebar.open{
+    right: 0;
+}
+
+.filterHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.closeFilter{
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.overlay.show{
+    opacity: 1;
+    visibility: visible;
+}
+.priceRange{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.priceRange input{
+    height: 20px;
+    width: 150px;
+    color: white;
+}
+
+.filterContent{
+    margin: 20px 0;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.submitFilter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 20px;
+}
+.submitFilter button{
+    width: 150px;
+    height: 30px;
+}
