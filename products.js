@@ -16,10 +16,14 @@ res.onreadystatechange = function readyProd () {
 
 //  ============================== pop up window (quick view) =============================
 
-function openPopUp(i) {
-  const popUp = document.querySelector(".popUp");
 
+function openPopUp(i) {
+  
+  const popUp = document.querySelector(".popUp");
+    popUp.style =`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),  url(${products[i].img[0]});`
   popUp.classList.add("open-popUp");
+
+   
 
   popUp.innerHTML = `
 

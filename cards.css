@@ -118,11 +118,14 @@ transition: all 0.5s;
     right: 10%;
     bottom: 10px;
     visibility: hidden;
-    background-color: rgba(0, 24, 52, 0.77);
+    background-size: cover;
     transform: translate(50%, 50%) scale(0.1);
     transition: transform 0.4s, bottom 0.4s;
     justify-content: center;
     align-items: center;
+}
+.popUp.bg{
+
 }
 .popUp p{
     /* background-color: white; */
@@ -135,7 +138,6 @@ transition: all 0.5s;
 }
 .imgPop{
     width: 500px;
-
 }
 .open-popUp{
     visibility: visible;
