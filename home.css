@@ -1,20 +1,37 @@
+/* ============================== global styles ====================================================== */
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
+/* ============================== Header ====================================================== */
 .header {
   width: 100%;
-  height: 100%;
-  position: fixed;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  top: 0px;
-  height: 70px;
-  background-color: rgba(255, 255, 255, 1);
   z-index: 1100;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
+}
+.header.scrolled {
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.95);
+  animation: slideDown 0.4s ease forwards;
+  position: fixed;
+}
+.header.scrolled li,
+.header.scrolled i {
+  color: #111;
+}
+.header li,
+.header i {
+  color: #333;
 }
 .nav {
   width: 100%;
@@ -26,6 +43,9 @@
   margin: 0px 172px;
   padding-top: 25px;
 }
+.header.scrolled .nav {
+  padding-bottom: 25px;
+}
 .nav > a {
   margin: 0px 55px 0px 0px;
 }
@@ -33,7 +53,6 @@
   display: flex;
   align-items: center;
   background-color: transparent;
-  /* padding: 0px 0px 0px 45px; */
 }
 .nav_icons {
   width: 50%;
@@ -56,11 +75,101 @@
   margin: 0px 4px 0px 14px;
   list-style-type: none;
 }
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ============================== Hero Section ====================================================== */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111;
+}
+.hero p {
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0 30px;
+  max-width: 400px;
+}
+.hero button {
+  padding: 14px 36px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.hero button:hover {
+  background: #e63946;
+  transform: translateY(-3px);
+}
+.hero img {
+  max-width: 500px;
+  width: 100%;
+  animation: float 4s ease-in-out infinite;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .hero p {
+    margin: 0 auto 30px;
+  }
+}
+
+/* ============================== Hero Section ====================================================== */
+
 .test {
-  height: 3000px;
+  height: 1000px;
   border: #333 1px solid;
   background-color: #851d1d;
 }
+/* ============================== Footer ====================================================== */
 footer {
   width: 100%;
   background-color: #222;
@@ -149,7 +258,8 @@ footer {
   text-transform: uppercase;
   cursor: pointer;
 }
-.footer_row_four, .footer_row_three {
+.footer_row_four,
+.footer_row_three {
   padding-left: 10px;
 }
 .footer_row_four {

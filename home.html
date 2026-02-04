@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="home.css" />
   </head>
   <body>
+    <!-- ============================== Header ====================================================== -->
     <header class="header">
       <nav class="nav">
         <a href="#"><img src="./images/logo.webp" alt="logo" /> </a>
@@ -37,11 +38,20 @@
         </div>
       </nav>
     </header>
+    <!-- ============================== end Header ====================================================== -->
+    <div class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Men New-Season</h1>
+        <p>Discover the best products at unbeatable prices.</p>
+        <button>Shop Now</button>
+      </div>
+    </div>
     <div class="test">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, magnam
       deleniti autem a totam id iure ratione fuga repudiandae repellat inventore
       corporis ipsum assumenda mollitia unde sunt quas dolores sed!
     </div>
+    <!-- ============================== Footer ====================================================== -->
     <footer class="footer">
       <div class="footer_container">
         <div class="footer_container_rows">
@@ -96,4 +106,36 @@
       </div>
     </footer>
   </body>
+  <script>
+  const hero = document.getElementById("hero");
+
+  const slides = [
+    "images/slide1.webp",
+    "images/slide2.webp",
+    "images/slide3.webp"
+  ];
+
+  let currentSlide = 0;
+
+  function changeSlide() {
+    hero.style.backgroundImage = `url(${slides[currentSlide]})`;
+    currentSlide = (currentSlide + 1) % slides.length;
+  }
+
+  changeSlide(); // أول صورة
+  setInterval(changeSlide, 4000); // كل 4 ثواني
+</script>
+<script>
+  const header = document.querySelector(".header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
 </html>
+<!-- ============================== end Footer ====================================================== -->
