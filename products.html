@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="cards.css">
+    
+</head>
+<body>
+    
+    <h2>PRODUCT OVERVIEW</h2>
+
+        <nav class="NavButtons">
+            <div class="ProductsNav">
+                <a data-category="all">All Products</a>
+                <a data-category="women">Women</a>
+                <a data-category="men">Men</a>
+                <a data-category="bag">Bag</a>
+                <a data-category="shoes">Shoes</a>
+                <a data-category="watches">Watches</a>
+            </div>
+            <div class="FilterAndSearch">
+                
+                <input type="text" name="" id="searchIn" placeholder="search">
+                <button id="search"> <i class="material-icons">search</i> Search</button>
+                <button id="filter"> <i class="material-icons">wrap_text</i> Filter</button>
+            </div>
+
+            <div class="filterSidebar">
+                <div class="filterHeader">
+                    <h3>Filter</h3>
+                    <button class="closeFilter">&times;</button>
+                </div>
+
+                <div class="filterContent">
+                    
+                    <p>Price Range</p>
+                    <div class="priceRange">
+                        <input type="number" class="price" placeholder="$ Min"> 
+                        <input type="number" class="price" placeholder="$ Max">
+                    </div>
+                </div>
+                <div class="submitFilter">
+                <button id="Apply">Apply</button>
+                </div>
+            </div>
+
+            <div class="overlay"></div>
+
+        </nav>
+
+    
+<section class="cardDiv">
+
+<!--
+        <section class="Cards">
+            <div class="Img">
+                <img src="assets/women/product-01.webp" alt="">
+                <button>
+                Quick View
+                </button>
+            </div>
+
+            <div class="description">
+            <div class="CardsTxt">
+                <a href=""> helloo </a>
+                <p>$18.90</p>
+            </div>
+            <button>
+                    <i class="material-icons">favorite</i>
+            </button>
+            
+            </div>
+        </section> -->
+
+        
+
+</section>
+
+<section class="popUp">
+    <!-- <div class="popUpContent">
+        <div class="buttonPop"><button class="closeButton" >
+            &times;
+        </button></div>
+    <div class="imgPop"><img src="assets/women/product-01.webp" alt=""></div>
+        <p> Item Name</p>
+    </div> -->
+</section>
+
+    <script src="products.js"></script>
+</body>
+</html>
