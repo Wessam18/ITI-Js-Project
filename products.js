@@ -16,7 +16,7 @@ res.onreadystatechange = function readyProd () {
 
 //  ============================== pop up window (quick view) =============================
 
-function openPopUp(index) {
+function openPopUp(i) {
   const popUp = document.querySelector(".popUp");
 
   popUp.classList.add("open-popUp");
@@ -28,13 +28,13 @@ function openPopUp(index) {
         <button class="closeButton">&times;</button>
       </div>
       <div class="imgPop">
-        <img src="${products[index].img[0]}" alt="">
+        <img src="${products[i].img[0]}" alt="">
       </div>
         <div class="NnP">
-      <p>${products[index].name}</p>
-      <p>$${products[index].price}</p>
+      <p>${products[i].name}</p>
+      <p>$${products[i].price}</p>
       </div>
-      <p>${products[index].description}</p>
+      <p>${products[i].description}</p>
     </div>
   `;
 
@@ -50,8 +50,9 @@ function closePopUp() {
 function addbtn() {
   var cards = document.querySelectorAll(".Cards");
 
-  cards.forEach((card, index) => {
+  cards.forEach((card) => {
     const img = card.querySelector(".Img");
+    const productIndex = card.dataset.index;
 
     img.addEventListener("mouseenter", () => {
       if (img.querySelector(".quick-btn")) return;
@@ -62,7 +63,7 @@ function addbtn() {
 
       img.appendChild(btn);
 
-      btn.addEventListener("click", () => openPopUp(index));
+      btn.addEventListener("click", () => openPopUp(productIndex));
     });
 
     img.addEventListener("mouseleave", () => {
@@ -78,10 +79,9 @@ function addbtn() {
 function displayAll(x) {
     
     for(i=0; i< x ; i++){
-        // if( products.type == "")
             document.querySelector(".cardDiv").innerHTML +=
         `
-                <section class="Cards">
+                <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
@@ -107,7 +107,7 @@ function displayMen(){
         if(products[i].type == "man"){
             document.querySelector(".cardDiv").innerHTML +=
         `
-                <section class="Cards">
+                <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
@@ -133,7 +133,7 @@ function displayWomen(){
         if(products[i].type == "woman"){
             document.querySelector(".cardDiv").innerHTML +=
         `
-                <section class="Cards">
+                <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
@@ -159,7 +159,7 @@ function displayShoes(){
         if(products[i].type == "shoe"){
             document.querySelector(".cardDiv").innerHTML +=
         `
-                <section class="Cards">
+                <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
@@ -185,7 +185,7 @@ function displayWatch(){
         if(products[i].type == "watch"){
             document.querySelector(".cardDiv").innerHTML +=
         `
-                <section class="Cards">
+                <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
@@ -211,7 +211,7 @@ function displayBags(){
         if(products[i].type == "bag"){
             document.querySelector(".cardDiv").innerHTML +=
         `
-                <section class="Cards">
+                <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
