@@ -16,9 +16,9 @@
 }
 
 .Img{
-    width: 100%; 
-    height: auto; 
-    max-height: 480px;
+    width: auto;
+    height: 100%;
+    max-height: 420px;
     overflow: hidden;
     position: relative;
 }
@@ -138,6 +138,9 @@ transition: all 0.5s;
 }
 .imgPop{
     width: 500px;
+}
+.imgPop img{
+    height: 600px;
 }
 .open-popUp{
     visibility: visible;
