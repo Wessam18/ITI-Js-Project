@@ -1,113 +1,339 @@
-[{
+[
+  {
+    "id": 1,
+    "type": "woman",
+    "name": "Elegant Black Dress",
+    "description": "A chic black dress with modern silhouette, perfect for evening wear.",
+    "price": 89.99,
+    "img": [
+      "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
+      "https://images.pexels.com/photos/2983465/pexels-photo-2983465.jpeg",
+      "https://images.pexels.com/photos/2983466/pexels-photo-2983466.jpeg"
+    ],
+    "weight": "350 g",
+    "dimensions": "Standard fit",
+    "materials": "Silk Blend",
+    "colors": ["black"],
+    "sizes": ["S", "M", "L"],
+    "sku": "WOM-DR-01",
+    "reviews": ["Absolutely stunning!", "Loved the fit and fabric."]
+  },
+  {
+    "id": 2,
+    "type": "woman",
+    "name": "Casual Summer Dress",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
+    "price": 69.50,
+    "img": [
+      "https://images.pexels.com/photos/1298601/pexels-photo-1298601.jpeg",
+      "https://images.pexels.com/photos/1298602/pexels-photo-1298602.jpeg",
+      "https://images.pexels.com/photos/1298603/pexels-photo-1298603.jpeg"
+    ],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
+  },
+  {
+    "id": 3,
+    "type": "man",
+    "name": "Classic Denim Jacket",
+    "description": "Timeless denim jacket with rugged look and comfortable fit.",
+    "price": 120.00,
+    "img": [
+      "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg",
+      "https://images.pexels.com/photos/428341/pexels-photo-428341.jpeg",
+      "https://images.pexels.com/photos/428342/pexels-photo-428342.jpeg"
+    ],
+    "weight": "700 g",
+    "dimensions": "Regular fit",
+    "materials": "Denim",
+    "colors": ["blue"],
+    "sizes": ["M", "L", "XL"],
+    "sku": "MEN-JKT-01",
+    "reviews": ["Nice fit.", "Good quality denim."]
+  },
+  {
+    "id": 4,
+    "type": "man",
+    "name": "Formal White Shirt",
+    "description": "Elegant cotton shirt for formal occasions or office wear.",
+    "price": 49.99,
+    "img": [
+      "https://images.pexels.com/photos/428346/pexels-photo-428346.jpeg",
+      "https://images.pexels.com/photos/428347/pexels-photo-428347.jpeg",
+      "https://images.pexels.com/photos/428348/pexels-photo-428348.jpeg"
+    ],
+    "weight": "250 g",
+    "dimensions": "Regular fit",
+    "materials": "Cotton",
+    "colors": ["white"],
+    "sizes": ["M", "L", "XL"],
+    "sku": "MEN-SH-01",
+    "reviews": ["Very classy.", "Great for office."]
+  },
+  {
+    "id": 5,
+    "type": "shoe",
+    "name": "Premium Leather Sneakers",
+    "description": "Comfortable and stylish leather sneakers for everyday wear.",
+    "price": 75.50,
+    "img": [
+      "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg",
+      "https://images.pexels.com/photos/2529149/pexels-photo-2529149.jpeg",
+      "https://images.pexels.com/photos/2529150/pexels-photo-2529150.jpeg"
+    ],
+    "weight": "500 g",
+    "dimensions": "EU 40–45",
+    "materials": "Leather",
+    "colors": ["black", "white"],
+    "sizes": ["40", "41", "42", "43", "44", "45"],
+    "sku": "SHO-SNK-01",
+    "reviews": ["Super comfy!", "Great for daily wear."]
+  },
+  {
+    "id": 6,
+    "type": "shoe",
+    "name": "Elegant Heels",
+    "description": "High-heeled shoes with sleek design, perfect for parties and formal events.",
+    "price": 120.99,
+    "img": [
+      "https://images.pexels.com/photos/19090/pexels-photo.jpg",
+      "https://images.pexels.com/photos/19100/pexels-photo.jpg",
+      "https://images.pexels.com/photos/19101/pexels-photo.jpg"
+    ],
+    "weight": "450 g",
+    "dimensions": "Standard sizes",
+    "materials": "Leather",
+    "colors": ["red", "black"],
+    "sizes": ["36", "37", "38", "39", "40"],
+    "sku": "WOM-SHO-01",
+    "reviews": ["Looks amazing!", "Very stylish."]
+  },
+{
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman1",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 57.4,
-    "img" : ["assets/women/product-01.webp", "", ""]
+    "img" : ["assets/women/product-01.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman1",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 10.13,
-    "img" : ["assets/women/product-02.webp", "", ""]
+    "img" : ["assets/women/product-02.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "man",
     "name" : "man T-shirt",
     "description" : "man1",
     "price" : 15.2,
-    "img" : ["assets/men/product-03.webp", "", ""]
+    "img" : ["assets/men/product-03.webp", "", ""],
+    "weight": "250 g",
+    "dimensions": "Regular fit",
+    "materials": "Cotton",
+    "colors": ["white"],
+    "sizes": ["M", "L", "XL"],
+    "sku": "MEN-SH-01",
+    "reviews": ["Very classy.", "Great for office."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman1",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 25.8,
-    "img" : ["assets/women/product-04.webp", "", ""]
+    "img" : ["assets/women/product-04.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman1",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 23.7,
-    "img" : ["assets/women/product-05.webp", "", ""]
+    "img" : ["assets/women/product-05.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "watch",
     "name" : "watch",
     "description" : "watch1",
     "price" : 40.0,
-    "img" : ["assets/watches/product-06.webp", "", ""]
+    "img" : ["assets/watches/product-06.webp", "", ""],
+    "weight": "500 g",
+    "dimensions": "EU 40–45",
+    "materials": "Leather",
+    "colors": ["black", "white"],
+    "sizes": ["40", "41", "42", "43", "44", "45"],
+    "sku": "SHO-SNK-01",
+    "reviews": ["Super comfy!", "Great for daily wear."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman1",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 35.4,
-    "img" : ["assets/women/product-07.webp", "", ""]
+    "img" : ["assets/women/product-07.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman1",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 39.9,
-    "img" : ["assets/women/product-08.webp", "", ""]
+    "img" : ["assets/women/product-08.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "shoe",
     "name" : "shoe",
     "description" : "shoes",
     "price" : 52.6,
-    "img" : ["assets/shoes/product-09.webp", "", ""]
+    "img" : ["assets/shoes/product-09.webp", "", ""],
+    "weight": "500 g",
+    "dimensions": "EU 40–45",
+    "materials": "Leather",
+    "colors": ["black", "white"],
+    "sizes": ["40", "41", "42", "43", "44", "45"],
+    "sku": "SHO-SNK-01",
+    "reviews": ["Super comfy!", "Great for daily wear."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 70.3,
-    "img" : ["assets/women/product-10.webp", "", ""]
+    "img" : ["assets/women/product-10.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "man",
     "name" : "man Belt",
     "description" : "man",
     "price" : 27.8,
-    "img" : ["assets/men/product-11.webp", "", ""]
+    "img" : ["assets/men/product-11.webp", "", ""],
+    "weight": "250 g",
+    "dimensions": "Regular fit",
+    "materials": "Cotton",
+    "colors": ["white"],
+    "sizes": ["M", "L", "XL"],
+    "sku": "MEN-SH-01",
+    "reviews": ["Very classy.", "Great for office."]
 },
 {
     "type" : "man",
     "name" : "man T-shirt",
     "description" : "man",
     "price" : 18.3,
-    "img" : ["assets/men/product-12.webp", "", ""]
+    "img" : ["assets/men/product-12.webp", "", ""],
+    "weight": "250 g",
+    "dimensions": "Regular fit",
+    "materials": "Cotton",
+    "colors": ["white"],
+    "sizes": ["M", "L", "XL"],
+    "sku": "MEN-SH-01",
+    "reviews": ["Very classy.", "Great for office."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 26.0,
-    "img" : ["assets/women/product-13.webp", "", ""]
+    "img" : ["assets/women/product-13.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 20.1,
-    "img" : ["assets/women/product-14.webp", "", ""]
+    "img" : ["assets/women/product-14.webp", "", ""],
+    "weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 },
 {
     "type" : "watch",
     "name" : "watch",
     "description" : "watch1",
     "price" : 74.2,
-    "img" : ["assets/watches/product-15.webp", "", ""]
+    "img" : ["assets/watches/product-15.webp", "", ""],
+    "weight": "500 g",
+    "dimensions": "EU 40–45",
+    "materials": "Leather",
+    "colors": ["black", "white"],
+    "sizes": ["40", "41", "42", "43", "44", "45"],
+    "sku": "SHO-SNK-01",
+    "reviews": ["Super comfy!", "Great for daily wear."]
 },
 {
     "type" : "woman",
     "name" : "woman T-shirt",
-    "description" : "woman",
+    "description": "Lightweight summer dress with floral patterns, breathable and stylish.",
     "price" : 42.7,
-    "img" : ["assets/women/product-16.webp", "", ""]
+    "img" : ["assets/women/product-16.webp", "", ""],"weight": "300 g",
+    "dimensions": "Standard fit",
+    "materials": "Cotton",
+    "colors": ["red", "white", "green"],
+    "sizes": ["S", "M", "L", "XL"],
+    "sku": "WOM-DR-02",
+    "reviews": ["Perfect for summer!", "Very comfortable."]
 }
 ]

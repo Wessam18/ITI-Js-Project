@@ -12,8 +12,6 @@ res.onreadystatechange = function readyProd () {
     var products = JSON.parse(res.responseText);
     console.log(products);}
 
-
-
 //  ============================== pop up window (quick view) =============================
 
 
@@ -53,11 +51,9 @@ function closePopUp() {
 
 function addbtn() {
   var cards = document.querySelectorAll(".Cards");
-
   cards.forEach((card) => {
     const img = card.querySelector(".Img");
     const productIndex = card.dataset.index;
-
     img.addEventListener("mouseenter", () => {
       if (img.querySelector(".quick-btn")) return;
 
@@ -83,16 +79,17 @@ function addbtn() {
 function displayAll(x) {
     
     for(i=0; i< x ; i++){
+            var loc= `description.html?id=${i+1}`;
+
             document.querySelector(".cardDiv").innerHTML +=
         `
                 <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
-                        <a href=""> ${products[i].name} </a>
+                        <a href="${loc}"> ${products[i].name} </a>
                         <p>$${products[i].price}</p>
                     </div>
                     <button>
@@ -108,17 +105,19 @@ function displayAll(x) {
 
 function displayMen(){
     for(i=0; i<products.length; i++){
+            var loc= `description.html?id=${i+1}`;
+
         if(products[i].type == "man"){
+
             document.querySelector(".cardDiv").innerHTML +=
         `
                 <section class="Cards" data-index="${i}">
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
-                        <a href=""> ${products[i].name} </a>
+                        <a href="${loc}"> ${products[i].name} </a>
                         <p>$${products[i].price}</p>
                     </div>
                     <button>
@@ -134,6 +133,8 @@ function displayMen(){
 }
 function displayWomen(){
     for(i=0; i<products.length; i++){
+            var loc= `description.html?id=${i+1}`;
+
         if(products[i].type == "woman"){
             document.querySelector(".cardDiv").innerHTML +=
         `
@@ -141,10 +142,9 @@ function displayWomen(){
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
-                        <a href=""> ${products[i].name} </a>
+                        <a href="${loc}"> ${products[i].name} </a>
                         <p>$${products[i].price}</p>
                     </div>
                     <button>
@@ -160,6 +160,8 @@ function displayWomen(){
 }
 function displayShoes(){
     for(i=0; i<products.length; i++){
+            var loc= `description.html?id=${i+1}`;
+
         if(products[i].type == "shoe"){
             document.querySelector(".cardDiv").innerHTML +=
         `
@@ -167,10 +169,9 @@ function displayShoes(){
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
-                        <a href=""> ${products[i].name} </a>
+                        <a href="${loc}"> ${products[i].name} </a>
                         <p>$${products[i].price}</p>
                     </div>
                     <button>
@@ -186,6 +187,8 @@ function displayShoes(){
 }
 function displayWatch(){
     for(i=0; i<products.length; i++){
+            var loc= `description.html?id=${i+1}`;
+
         if(products[i].type == "watch"){
             document.querySelector(".cardDiv").innerHTML +=
         `
@@ -193,10 +196,9 @@ function displayWatch(){
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
-                        <a href=""> ${products[i].name} </a>
+                        <a href="${loc}"> ${products[i].name} </a>
                         <p>$${products[i].price}</p>
                     </div>
                     <button>
@@ -212,6 +214,8 @@ function displayWatch(){
 }
 function displayBags(){
     for(i=0; i<products.length; i++){
+            var loc= `description.html?id=${i+1}`;
+
         if(products[i].type == "bag"){
             document.querySelector(".cardDiv").innerHTML +=
         `
@@ -219,10 +223,9 @@ function displayBags(){
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
-                        <a href=""> ${products[i].name} </a>
+                        <a href="${loc}"> ${products[i].name} </a>
                         <p>$${products[i].price}</p>
                     </div>
                     <button>
@@ -251,12 +254,10 @@ function display(){
                             </button>
                         </div>
                         `
-
                         document.querySelector(".loadMore").addEventListener("click", function(){
                             document.querySelector(".cardDiv").innerHTML = ""
                             displayAll(products.length)
                         })
-
                     } else{
                             document.querySelector(".cardDiv").innerHTML = ""
                             displayAll(products.length);
@@ -432,7 +433,6 @@ function filter (){
                     <div class="Img">
                         <img src="${products[i].img[0]}" alt="">
                     </div>
-
                     <div class="description">
                     <div class="CardsTxt">
                         <a href=""> ${products[i].name} </a>
