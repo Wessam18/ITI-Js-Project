@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact Page</title>
     <link rel="stylesheet" href="/cart/style.css" />
     <link
       rel="stylesheet"
@@ -24,69 +24,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
     <link rel="stylesheet" href="products.css" />
-    <link rel="stylesheet" href="cart/style.css">
-    <link rel="stylesheet" href="description.css" />
-
     <link rel="stylesheet" href="cards.css" />
+    <link rel="stylesheet" href="/contactUs.css" />
   </head>
   <body>
-
-<section class="popUpDescription">
- <div class="container">
-      <div class="product-section">
-        <!-- Images -->
-        <div class="product-images">
-          <div class="thumbnails">
-            <img id="thumb-0" alt="" />
-            <img id="thumb-1" alt="" />
-            <img id="thumb-2" alt="" />
-          </div>
-          <div class="main-image">
-            <img id="main-img" alt="" />
-          </div>
-        </div>
-
-        <!-- Product Info -->
-        <div class="product-info">
-          <h1 class="product-name">Product Name</h1>
-          <p class="product-price">$0.00</p>
-          <div class="cart-buttons">
-            <!-- <div class="quantity"> -->
-            <!-- <button id="minus">-</button> -->
-            <!-- <span id="qty">1</span> -->
-            <!-- <button id="plus">+</button> -->
-            <!-- </div> -->
-            <button  class="add-cart">Add to Cart</button>
-            <i class="fa-regular fa-heart wishlist"></i>
-          </div>
-
-          <!-- ==============================end side bar ====================================================== -->
-
-          <!-- Tabs -->
-          <div class="description-btns">
-            <button class="active">Description</button>
-            <button>Additional Info</button>
-            <button>Reviews</button>
-          </div>
-          <div class="content"></div>
-
-          <!-- Footer SKU & Category -->
-          <div class="foot-desc"></div>
-        </div>
-        <a class="closeView" href="home.html">x</a>
-
-      </div>
-
-    </div>
-
-</section>  
-
-
     <!-- ============================== Header ====================================================== -->
     <header class="header">
       <nav class="nav">
@@ -126,95 +68,78 @@
         </div>
       </nav>
     </header>
+    <!-- ============================== end Header ====================================================== -->
 
-    <section class="pdts">
-      <div class="navigationArrows">
-        <a href="home.html">Home</a> >
-        <a href="products.html">SHOP</a>
-      </div>
-      <nav class="NavButtons">
-        <div class="ProductsNav">
-          <a data-category="all">All Products</a>
-          <a data-category="women">Women</a>
-          <a data-category="men">Men</a>
-          <a data-category="bag">Bag</a>
-          <a data-category="shoes">Shoes</a>
-          <a data-category="watches">Watches</a>
+    <section class="contact-page">
+      <!-- Hero -->
+      <main class="hero-contact">
+        <h2>Contacts</h2>
+      </main>
+
+      <!-- Info Cards -->
+      <section class="info-section">
+        <div class="info-grid">
+          <article class="info-card border-right">
+            <h3>Our Location</h3>
+            <p>
+              3481 Melrose Place, Beverly Hills <br />
+              CA 90210
+            </p>
+          </article>
+
+          <article class="info-card border-right">
+            <h3>Telephone</h3>
+            <p>
+              (+1) 517 397 7100 <br />
+              (+1) 411 315 8138
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Send email</h3>
+            <p>
+              Info@example.com <br />
+              admin@example.com
+            </p>
+          </article>
         </div>
-        <div class="FilterAndSearch">
-          <input type="text" name="" id="searchIn" placeholder="search" />
-          <button id="search">
-            <i class="material-icons">search</i> Search
-          </button>
-          <button id="filter">
-            <i class="material-icons">wrap_text</i> Filter
-          </button>
-        </div>
-
-        <div class="filterSidebar">
-          <div class="filterHeader">
-            <h3>Filter</h3>
-            <button class="closeFilter">&times;</button>
-          </div>
-
-          <div class="filterContent">
-            <p>Price Range</p>
-            <div class="priceRange">
-              <input type="number" class="price" placeholder="$ Min" />
-              <input type="number" class="price" placeholder="$ Max" />
-            </div>
-          </div>
-          <div class="submitFilter">
-            <button id="Apply">Apply</button>
-          </div>
-        </div>
-
-        <div class="overlay"></div>
-      </nav>
-      <section class="cardDiv">
-        <!--
-        <section class="Cards">
-            <div class="Img">
-                <img src="assets/women/product-01.webp" alt="">
-                <button>
-                Quick View
-                </button>
-            </div>
-            <div class="description">
-            <div class="CardsTxt">
-                <a href=""> helloo </a>
-                <p>$18.90</p>
-            </div>
-            <button>
-              <i class="material-icons">favorite</i>
-            </button>
-            </div>
-        </section> -->
       </section>
-      <section class="popUp">
-        <!-- <div class="popUpContent">
-        <div class="buttonPop"><button class="closeButton" >
-            &times;
-        </button></div>
-    <div class="imgPop"><img src="assets/women/product-01.webp" alt=""></div>
-        <p> Item Name</p>
-    </div> -->
 
+      <!-- Contact Form -->
+      <section class="form-section">
+        <div class="form-container">
+          <h2 class="form-title">Send your message.</h2>
 
+          <form class="contact-form">
+            <div class="two-cols">
+              <div class="field">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" />
+              </div>
 
+              <div class="field">
+                <label>Your Email</label>
+                <input type="email" placeholder="Enter your email" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Your Subject</label>
+              <input type="text" placeholder="Enter your subject" />
+            </div>
+
+            <div class="field">
+              <label>Your Message</label>
+              <textarea rows="6" placeholder="Enter your message"></textarea>
+            </div>
+
+            <div class="btn-wrapper">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
       </section>
     </section>
-    <!-- <div class="loadMoreDiv">
-      <button
-        class="loadMore"
-        id="viewMore"
-        onclick="window.location.href = 'products.html'"
-      >
-        Explore All Products
-      </button>
-    </div> -->
-
-    <!-- ============================== Footer ====================================================== -->
     <footer class="footer">
       <div class="footer_container">
         <div class="footer_container_rows">
@@ -269,17 +194,9 @@
       </div>
     </footer>
   </body>
-
-
   <script src="/header-scroll.js"></script>
+  <script src="/hero-slider.js"></script>
   <script src="products.js"></script>
-<<<<<<< HEAD
-    <script src="/cart/index.js"></script>
-  <script src="description.js" ></script>
-=======
   <script src="/cart/index.js"></script>
-    <script src="theme-toggle.js"></script>
->>>>>>> origin/home
-
+  <script src="theme-toggle.js"></script>
 </html>
-<!-- ============================== end Footer ====================================================== -->
