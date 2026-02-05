@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/cart/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <script
       src="https://kit.fontawesome.com/6183ab3892.js"
       crossorigin="anonymous"
@@ -15,6 +20,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="products.css" />
+    <link rel="stylesheet" href="cards.css" />
   </head>
   <body>
     <!-- ============================== Header ====================================================== -->
@@ -33,7 +44,27 @@
         </div>
         <div class="nav_icons">
           <div><i class="fa-solid fa-magnifying-glass"></i></div>
-          <div><i class="fa-solid fa-cart-arrow-down"></i></div>
+          <!-- <div class="cart-icon-container" onclick="toggleSideCart()"><i class="fa-solid fa-cart-arrow-down"></i><span id="cartCount">0</span></div> -->
+          <div class="cart-icon-container" onclick="toggleSideCart()">
+            <i class="fa-solid fa-cart-arrow-down"></i
+            ><span id="cartCount">0</span>
+          </div>
+          <!-- ==============================side bar ====================================================== -->
+
+          <section class="products" id="products"></section>
+          <div class="side-cart" id="sideCart">
+            <div class="side-cart-header">
+              <h2>Your Cart</h2>
+              <span class="close" onclick="toggleSideCart()"> × </span>
+            </div>
+            <div id="sideCartItems"></div>
+            <div class="side-cart-footer">
+              <p>Total: $<span id="sideCartTotal">0</span></p>
+              <button onclick="goToCartPage()">Proceed to Cart Page</button>
+            </div>
+          </div>
+          <!-- ==============================end side bar ====================================================== -->
+
           <div><i class="fa-regular fa-heart"></i></div>
         </div>
       </nav>
@@ -46,11 +77,77 @@
         <button>Shop Now</button>
       </div>
     </div>
-    <div class="test">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, magnam
-      deleniti autem a totam id iure ratione fuga repudiandae repellat inventore
-      corporis ipsum assumenda mollitia unde sunt quas dolores sed!
-    </div>
+    <section class="pdts">
+      <h2>PRODUCT OVERVIEW</h2>
+      <nav class="NavButtons">
+        <div class="ProductsNav">
+          <a data-category="all">All Products</a>
+          <a data-category="women">Women</a>
+          <a data-category="men">Men</a>
+          <a data-category="bag">Bag</a>
+          <a data-category="shoes">Shoes</a>
+          <a data-category="watches">Watches</a>
+        </div>
+        <div class="FilterAndSearch">
+          <input type="text" name="" id="searchIn" placeholder="search" />
+          <button id="search">
+            <i class="material-icons">search</i> Search
+          </button>
+          <button id="filter">
+            <i class="material-icons">wrap_text</i> Filter
+          </button>
+        </div>
+
+        <div class="filterSidebar">
+          <div class="filterHeader">
+            <h3>Filter</h3>
+            <button class="closeFilter">&times;</button>
+          </div>
+
+          <div class="filterContent">
+            <p>Price Range</p>
+            <div class="priceRange">
+              <input type="number" class="price" placeholder="$ Min" />
+              <input type="number" class="price" placeholder="$ Max" />
+            </div>
+          </div>
+          <div class="submitFilter">
+            <button id="Apply">Apply</button>
+          </div>
+        </div>
+
+        <div class="overlay"></div>
+      </nav>
+      <section class="cardDiv">
+        <!--
+        <section class="Cards">
+            <div class="Img">
+                <img src="assets/women/product-01.webp" alt="">
+                <button>
+                Quick View
+                </button>
+            </div>
+            <div class="description">
+            <div class="CardsTxt">
+                <a href=""> helloo </a>
+                <p>$18.90</p>
+            </div>
+            <button>
+              <i class="material-icons">favorite</i>
+            </button>
+            </div>
+        </section> -->
+      </section>
+      <section class="popUp">
+        <!-- <div class="popUpContent">
+        <div class="buttonPop"><button class="closeButton" >
+            &times;
+        </button></div>
+    <div class="imgPop"><img src="assets/women/product-01.webp" alt=""></div>
+        <p> Item Name</p>
+    </div> -->
+      </section>
+    </section>
     <!-- ============================== Footer ====================================================== -->
     <footer class="footer">
       <div class="footer_container">
@@ -107,35 +204,36 @@
     </footer>
   </body>
   <script>
-  const hero = document.getElementById("hero");
+    const hero = document.getElementById("hero");
 
-  const slides = [
-    "images/slide1.webp",
-    "images/slide2.webp",
-    "images/slide3.webp"
-  ];
+    const slides = [
+      "images/slide1.webp",
+      "images/slide2.webp",
+      "images/slide3.webp",
+    ];
 
-  let currentSlide = 0;
+    let currentSlide = 0;
 
-  function changeSlide() {
-    hero.style.backgroundImage = `url(${slides[currentSlide]})`;
-    currentSlide = (currentSlide + 1) % slides.length;
-  }
-
-  changeSlide(); // أول صورة
-  setInterval(changeSlide, 4000); // كل 4 ثواني
-</script>
-<script>
-  const header = document.querySelector(".header");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+    function changeSlide() {
+      hero.style.backgroundImage = `url(${slides[currentSlide]})`;
+      currentSlide = (currentSlide + 1) % slides.length;
     }
-  });
-</script>
 
+    changeSlide(); // أول صورة
+    setInterval(changeSlide, 4000); // كل 4 ثواني
+  </script>
+  <script>
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  </script>
+  <script src="products.js"></script>
+  <script src="/cart/index.js"></script>
 </html>
 <!-- ============================== end Footer ====================================================== -->

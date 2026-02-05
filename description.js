@@ -75,3 +75,25 @@ function showReviews(){
 buttons[0].addEventListener("click", ()=>{ showDescription(); setActive(0); });
 buttons[1].addEventListener("click", ()=>{ showInfo(); setActive(1); });
 buttons[2].addEventListener("click", ()=>{ showReviews(); setActive(2); });
+// ===== Add to Cart =====
+const cartBtn = document.querySelector(".add-cart");
+const wishIcon = document.querySelector(".wishlist");
+
+/* ---------- CART ---------- */
+cartBtn.onclick = function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const productId = products[id].id;
+    const found = cart.find(item => item.id === productId);
+
+    if (found) {
+        found.qty += 1;
+    } else {
+        cart.push({ id: productId, qty: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    cartBtn.innerText = "Added ✔";
+    setTimeout(() => cartBtn.innerText = "Add to Cart", 1200);
+};

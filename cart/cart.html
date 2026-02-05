@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart</title>
+<link rel="stylesheet" href="cart.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+<header>
+  <h1>YOUR CART</h1>
+</header>
+
+<section class="cart-page">
+  <div class="cart-page-content">
+    <div id="cartPageItems"></div>
+    <div class="aaa">
+        <div class="cart-total">Total: $<span id="cartPageTotal">0</span></div>
+        <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+</section>
+
+
+<div class="checkout-modal" id="checkout">
+
+
+  <div class="checkout-content">
+
+
+    <span class="close" onclick="closeCheckout()">×</span>
+
+
+    <div class="progress">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+
+    <div class="step active" id="step1">
+      <h2>Basic Information</h2>
+      <input type="text" id="custName" placeholder="Full Name">
+      <input type="email" id="custEmail" placeholder="Email">
+      <input type="text" id="custAddress" placeholder="Address">
+      <input type="text" id="custPhone" placeholder="Phone">
+      <button class="next" onclick="nextStep()">Next</button>
+    </div>
+
+
+    <div class="step" id="step2">
+      <h2>Order Summary</h2>
+      <div id="checkoutItems"></div>
+      <div class="total-summary">Total: $<span id="checkoutTotal">0</span></div>
+      <div class="row">
+        <button class="prev" onclick="showStep(currentStep-1)">Back</button>
+        <button class="next" onclick="nextStep()">Next</button>
+      </div>
+    </div>
+
+    <div class="step" id="step3">
+      <h2>Payment Method</h2>
+      <label><input type="radio" name="payment" checked> Credit Card</label>
+      <label><input type="radio" name="payment"> Cash On Delivery</label>
+      <div class="row">
+        <button class="prev" onclick="showStep(currentStep-1)">Back</button>
+        <button class="next" onclick="nextStep()">Next</button>
+      </div>
+    </div>
+
+
+    <div class="step" id="step4">
+      <h2>Thank You!</h2>
+      <p>Your order has been placed successfully </p>
+      <button onclick="finishCheckout()">Close</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script src="cart.js"></script>
+</body>
+</html>
