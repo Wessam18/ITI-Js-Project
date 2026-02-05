@@ -1,18 +1,19 @@
 /* General Body */
-body {
+/* body{
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #4c6870, #033046);
   color: #333;
-}
+} */
 
 /* Container */
-.container{
+.popUpDescription .container {
   width: 90%;
   max-width: 1200px;
-  margin: 50px auto;
+  margin: auto;
   padding: 20px;
+  animation: popupFade 0.3s ease;
 }
+
 .closeView{
   font-size: 30px ;
   color: black;
@@ -224,5 +225,16 @@ body {
   .thumbnails img{
     width: 60px;
     height: 60px;
+  }
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

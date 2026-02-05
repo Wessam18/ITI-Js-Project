@@ -9,8 +9,166 @@ res.send();
 
 res.onreadystatechange = function readyProd () {
   if (res.readyState === 4 && res.status === 200) {
-    var products = JSON.parse(res.responseText);
+     products = JSON.parse(res.responseText);
     console.log(products);}
+
+    
+//  ============================== pop up window (Description) =============================
+function opendescription(i) {
+  if (!products || !products[i]) return;
+
+  const p = products[i];
+  const popup = document.querySelector(".popUpDescription");
+
+  /* ===== Fill Product Info ===== */
+  popup.querySelector(".product-name").textContent = p.name;
+  popup.querySelector(".product-price").textContent = `$${p.price.toFixed(2)}`;
+  popup.querySelector(".foot-desc").textContent =
+    `SKU: ${p.sku} | Category: ${p.type}`;
+
+  /* ===== Images ===== */
+  const mainImg = popup.querySelector("#main-img");
+
+  p.img.forEach((src, index) => {
+    const thumb = popup.querySelector(`#thumb-${index}`);
+    if (thumb) {
+      thumb.src = src;
+      thumb.style.display = "block";
+      if (index === 0) mainImg.src = src;
+
+      // Thumbnail hover
+      thumb.onmouseenter = () => mainImg.src = src;
+    }
+  });
+
+  /* ===== Tabs ===== */
+  const buttons = popup.querySelectorAll(".description-btns button");
+  const content = popup.querySelector(".content");
+
+  function setActiveTab(index) {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    buttons[index].classList.add("active");
+
+    content.classList.remove("show");
+    setTimeout(() => content.classList.add("show"), 50);
+  }
+
+  function showDescription() {
+    popup.querySelector(".foot-desc").innerHTML =
+    `
+    <h4>
+    ${p.description}
+    </h4>
+
+
+
+    SKU: ${p.sku} | Category: ${p.type}`;
+
+    setActiveTab(0);
+  }
+
+  function showInfo() {
+    popup.querySelector(".foot-desc").innerHTML =
+    `
+    <h4>
+    Weight: ${p.weight || "N/A"}
+    </h4>
+<h4>
+    Dimensions: ${p.dimensions || "N/A"}
+    </h4>
+
+<h4>
+    Materials: ${p.materials || "N/A"}
+    </h4>
+
+<h4>
+    Colors:${p.colors?.join(", ") || "N/A"}
+    </h4>
+
+<h4>
+    Sizes:${p.sizes?.join(", ") || "N/A"}
+    </h4>
+
+
+
+    SKU: ${p.sku} | Category: ${p.type}`;
+
+
+    setActiveTab(1);
+  }
+
+  function showReviews() {
+     popup.querySelector(".foot-desc").innerHTML =
+    `
+   <h4> No reviews yet ⭐⭐⭐⭐⭐ </h4>
+
+
+    SKU: ${p.sku} | Category: ${p.type}`;
+    setActiveTab(2);
+  }
+
+  // Bind tab buttons
+  buttons[0].onclick = showDescription;
+  buttons[1].onclick = showInfo;
+  buttons[2].onclick = showReviews;
+
+  // Show default tab
+  showDescription();
+
+  /* ===== Cart Button ===== */
+  const cartBtn = popup.querySelector(".add-cart");
+  cartBtn.innerText = "Add to Cart";
+  cartBtn.onclick = () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const found = cart.find(item => item.id === p.id);
+
+    if (found) {
+      found.qty++;
+    } else {
+      cart.push({
+        id: p.id,
+        name: p.name,
+        price: p.price,
+        image: p.img[0],
+        qty: 1
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    cartBtn.innerText = "Added ✔";
+
+    toggleSideCart();
+  };
+
+  /* ===== Wishlist Button ===== */
+  const wishlistBtn = popup.querySelector(".wishlist");
+  wishlistBtn.onclick = () => {
+  };
+
+  /* ===== Close Popup ===== */
+  const closeBtn = popup.querySelector(".closeView");
+  closeBtn.onclick = () => {
+    popup.classList.remove("open-popUpDescription");
+  };
+
+  /* ===== Show Popup ===== */
+  popup.classList.add("open-popUpDescription");
+}
+
+
+function closeDescription() {
+  document
+    .querySelector(".popUpDescription")
+    .classList.remove("open-popUpDescription");
+document.body.classList.remove("popup-open");
+
+
+
+}
+
+
+
+
 
 
 //  ============================== pop up window (quick view) =============================
@@ -71,6 +229,10 @@ function addbtn() {
       const btn = img.querySelector(".quick-btn");
       if (btn) btn.remove();
     });
+    card.addEventListener("click", () => {
+    opendescription(productIndex);
+});
+
   });
 }
 
@@ -100,8 +262,9 @@ function displayAll(x) {
                     </div>
                 </section>
         `
-        addbtn()
     }
+        addbtn()
+
 }
 
 function displayMen(){
@@ -470,3 +633,5 @@ document.querySelector("#Apply").addEventListener("click", filter);
 
 
 };
+
+
