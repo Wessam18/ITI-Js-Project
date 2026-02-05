@@ -90,7 +90,14 @@ a:hover {
     transform: translateY(0);
   }
 }
+.theme-toggle {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
 /* ============================== Hero Section ====================================================== */
 .hero {
   min-height: 100vh;
@@ -507,4 +514,37 @@ footer {
 html,
 body {
   overflow-x: hidden;
+}
+/* ====================== Dark Mode ====================== */
+body.dark {
+  background-color: #111;
+  color: #eee;
+}
+
+body.dark .header.scrolled {
+  background-color: rgba(17, 17, 17, 0.95);
+}
+
+body.dark .nav_main_menu li,
+body.dark .nav_icons i, body.dark .nav ul li a {
+  color: #eee;
+}
+body.dark .hero h1,
+body.dark .hero p {
+  color: #fff;
+}
+body.dark .content h2,
+body.dark .content p {
+  color: #fff;
+}
+body.dark footer, body.dark header, body.dark .hero {
+  background-color: #111;
+}
+body.dark footer,
+body.dark footer p,
+body.dark footer li {
+  color: #aaa;
+}
+body.dark footer {
+  border-top: solid 1px #fff;
 }

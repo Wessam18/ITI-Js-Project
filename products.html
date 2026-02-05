@@ -36,12 +36,13 @@
           <ul class="nav_main_menu">
             <li><a href="home.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><a href="contactUs.html">Contact</a></li>
           </ul>
         </div>
         <div class="nav_icons">
-          <div><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="theme-toggle" id="themeToggle" title="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+          </div>
           <div class="cart-icon-container" id="NavCart">
             <i class="fa-solid fa-cart-arrow-down"></i>
             <span id="cartCount">0</span>
@@ -141,7 +142,7 @@
     </div> -->
       </section>
     </section>
-    <div class="loadMoreDiv">
+    <!-- <div class="loadMoreDiv">
       <button
         class="loadMore"
         id="viewMore"
@@ -149,7 +150,7 @@
       >
         Explore All Products
       </button>
-    </div>
+    </div> -->
 
     <!-- ============================== Footer ====================================================== -->
     <footer class="footer">
@@ -209,5 +210,7 @@
   <script src="/header-scroll.js"></script>
   <script src="products.js"></script>
   <script src="/cart/index.js"></script>
+    <script src="theme-toggle.js"></script>
+
 </html>
 <!-- ============================== end Footer ====================================================== -->
