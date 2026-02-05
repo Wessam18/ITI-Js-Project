@@ -1,5 +1,6 @@
 .pdts {
   padding: 40px;
+  margin: 0 130px 0 150px;
 }
 .pdts h2 {
   font-family: "Poppins", sans-serif;
@@ -12,14 +13,13 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  /* margin: 20px; */
+  gap: 10px;
 }
 .NavButtons .ProductsNav a {
   color: #888;
   text-decoration: none;
   margin: 10px;
-  transition-property: all;
-  transition-duration: 1s;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 .NavButtons .ProductsNav a:hover {
@@ -33,40 +33,33 @@
 }
 
 .FilterAndSearch button,
-input {
+.FilterAndSearch input {
   background: transparent;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-  width: 95px;
-  height: 40px;
   color: #888;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  transition: all 0.4s ease;
 }
 .FilterAndSearch input {
   width: 200px;
   height: 37px;
   visibility: hidden;
-  transition: all 0.4s ease;
   transform: scale(0);
-}
-
-.FilterAndSearch button:hover {
-  background: rgb(0, 24, 52);
-  transition: all 0.7s;
-  color: white;
-  cursor: pointer;
-  /* content: icon; */
-}
-.FilterAndSearch button:hover i {
-  color: white;
-  transition: all 0.7s;
 }
 .FilterAndSearch.show-search input {
   visibility: visible;
   transform: scale(1);
+}
+.FilterAndSearch button:hover {
+  background: rgb(0, 24, 52);
+  color: white;
+}
+.FilterAndSearch button:hover i {
+  color: white;
 }
 
 .filterSidebar {
@@ -75,9 +68,9 @@ input {
   top: 50px;
   right: -370px;
   width: fit-content;
-  height: fit-content;
+  max-width: 90%;
   color: white;
-  background: rgba(0, 24, 52, 0.65);
+  background: rgba(0, 24, 52, 0.95);
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
   transition: right 0.4s ease;
   z-index: 1001;
@@ -112,7 +105,6 @@ input {
   transition: 0.3s;
   z-index: 1000;
 }
-
 .overlay.show {
   opacity: 1;
   visibility: visible;
@@ -123,9 +115,11 @@ input {
   gap: 10px;
 }
 .priceRange input {
-  height: 20px;
-  width: 150px;
+  height: 35px;
+  width: 100%;
+  max-width: 150px;
   color: white;
+  padding: 0 5px;
 }
 
 .filterContent {
@@ -138,9 +132,82 @@ input {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin: 20px;
+  margin: 20px 0;
 }
 .submitFilter button {
-  width: 150px;
-  height: 30px;
+  width: 100%;
+  max-width: 150px;
+  height: 35px;
+}
+
+/* ========================== Responsive Media Queries ========================== */
+
+@media (max-width: 1024px) {
+  .pdts {
+    margin: 0 40px;
+    padding: 30px 20px;
+  }
+  .pdts h2 {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  .FilterAndSearch input {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pdts {
+    margin: 0 20px;
+    padding: 20px 10px;
+  }
+  .pdts h2 {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+  .NavButtons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .FilterAndSearch {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .FilterAndSearch input {
+    width: 100%;
+  }
+  .filterSidebar {
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdts {
+    margin: 50px 10px;
+    padding: 15px 10px;
+  }
+  .pdts h2 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .NavButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .FilterAndSearch {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .FilterAndSearch input {
+    width: 100%;
+  }
+  .submitFilter button {
+    max-width: 100%;
+  }
 }

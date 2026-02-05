@@ -131,7 +131,7 @@ a:hover {
   font-weight: 800;
   max-width: 400px;
 }
-.hero button {
+.hero a {
   padding: 14px 36px;
   background: #111;
   color: #fff;
@@ -142,7 +142,7 @@ a:hover {
   transition: 0.3s;
   margin-left: 71px;
 }
-.hero button:hover {
+.hero a:hover {
   background: #717fe0;
   transform: translateY(-3px);
 }
@@ -413,7 +413,7 @@ footer {
   }
   .hero h1,
   .hero p,
-  .hero button {
+  .hero a {
     margin-left: 0;
   }
   .nav {
@@ -469,7 +469,7 @@ footer {
     padding-left: 0;
   }
 
-  .hero button {
+  .hero a {
     margin: 0 auto;
   }
 
