@@ -169,10 +169,10 @@ xhr.onload = function () {
 
     currentProduct = products.find(p => p.id === selectedId);
 
-    if (!currentProduct) {
-      document.body.innerHTML = "<h2>Product not found</h2>";
-      return;
-    }
+    // if (!currentProduct) {
+    //   document.body.innerHTML = "<h2>Product not found</h2>";
+    //   return;
+    // }
 
     loadProduct();
     showDescription();

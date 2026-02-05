@@ -33,10 +33,10 @@ function renderProductDetails() {
 
   const product = pushProducts.find(p => p.id === gotId);
 
-  if (!product) {
-    productsContainer.innerHTML = "<p>Product not found</p>";
-    return;
-  }
+  // if (!product) {
+  //   productsContainer.innerHTML = "<p>Product not found</p>";
+  //   return;
+  // }
 
   productsContainer.innerHTML = `
     <div class="product">

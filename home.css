@@ -97,6 +97,7 @@ a:hover {
   position: relative;
   padding: 0 8%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   overflow: hidden;
   justify-content: space-between;
@@ -105,6 +106,7 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 1s ease-in-out;
+  overflow-x: hidden; 
 }
 .hero-content {
   position: relative;
@@ -145,8 +147,9 @@ a:hover {
   transform: translateY(-3px);
 }
 .hero img {
-  max-width: 500px;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   animation: float 4s ease-in-out infinite;
 }
 .hero::after {
@@ -402,4 +405,106 @@ footer {
 }
 .footer_row_four {
   padding-left: 20px;
+}
+/* ========================== responsive ================================================= */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 0 24px;
+  }
+  .hero h1,
+  .hero p,
+  .hero button {
+    margin-left: 0;
+  }
+  .nav {
+    margin: 0;
+    padding: 0 24px;
+  }
+
+  .nav_icons {
+    width: auto;
+  }
+
+  .categories {
+    margin: 40px 24px 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer_container {
+    margin: 0;
+    padding: 0 24px;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    margin: 0 20px;
+    padding: 0 16px;
+  }
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 0 16px;
+    gap: 20px;
+  }
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 38px;
+    max-width: 100%;
+  }
+  .footer_container_rows {
+    flex-direction: column;
+  }
+
+  .footer_row {
+    width: 100%;
+    padding-bottom: 30px;
+    padding-left: 0;
+  }
+
+  .hero button {
+    margin: 0 auto;
+  }
+
+  .hero-arrow {
+    display: none;
+  }
+
+  .nav_main_menu {
+    display: none;
+  }
+
+  .nav_icons {
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .categories {
+    margin: 20px 16px 0;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    gap: 10px;
+    justify-content:center;
+  }
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 28px;
+  }
+}
+html,
+body {
+  overflow-x: hidden;
 }
