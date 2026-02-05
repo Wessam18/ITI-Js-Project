@@ -31,13 +31,11 @@
     <!-- ============================== Header ====================================================== -->
     <header class="header">
       <nav class="nav">
-        <a href="#"><img src="./images/logo.webp" alt="logo" /> </a>
+        <a href="#"><img src="./images/logo1.webp" alt="logo" /> </a>
         <div>
           <ul class="nav_main_menu">
-            <li>Home</li>
-            <li>Shop</li>
-            <li>Features</li>
-            <li>Blog</li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
             <li>About</li>
             <li>Contact</li>
           </ul>
@@ -70,13 +68,61 @@
       </nav>
     </header>
     <!-- ============================== end Header ====================================================== -->
-    <div class="hero" id="hero">
-      <div class="hero-content">
-        <h1>Men New-Season</h1>
-        <p>Discover the best products at unbeatable prices.</p>
-        <button>Shop Now</button>
+    <main class="hero" id="hero">
+      <!-- arrows -->
+      <div class="hero-arrow left" id="prevSlide">
+        <i class="fa-solid fa-chevron-left"></i>
       </div>
-    </div>
+      <div class="hero-arrow right" id="nextSlide">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <!-- content -->
+      <div class="hero-content">
+        <h1 class="hero-title">Men New-Season</h1>
+        <p class="hero-text">
+          Discover the best products at unbeatable prices.
+        </p>
+        <button class="hero-btn">Shop Now</button>
+      </div>
+    </main>
+
+    <!-- ============================== hero cards Header ====================================================== -->
+
+    <section class="categories">
+      <div class="category-card">
+        <img src="images/banner1.webp" alt="Women" />
+        <div class="content">
+          <h2>Women</h2>
+          <p>Spring 2030</p>
+        </div>
+        <div class="hover-layer">
+          <a href="products.html">SHOP NOW</a>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="images/banner2.webp" alt="Men" />
+        <div class="content">
+          <h2>Men</h2>
+          <p>Spring 2030</p>
+        </div>
+        <div class="hover-layer">
+          <a href="products.html">SHOP NOW</a>
+        </div>
+      </div>
+      <div class="category-card">
+        <img src="images/banner3.webp" alt="Accessories" />
+        <div class="content">
+          <h2>Accessories</h2>
+          <p>New Trend</p>
+        </div>
+        <div class="hover-layer">
+          <a href="products.html">SHOP NOW</a>
+        </div>
+      </div>
+    </section>
+    <!-- ============================== end hero cards Header ====================================================== -->
+
     <section class="pdts">
       <h2>PRODUCT OVERVIEW</h2>
       <nav class="NavButtons">
@@ -203,36 +249,8 @@
       </div>
     </footer>
   </body>
-  <script>
-    const hero = document.getElementById("hero");
-
-    const slides = [
-      "images/slide1.webp",
-      "images/slide2.webp",
-      "images/slide3.webp",
-    ];
-
-    let currentSlide = 0;
-
-    function changeSlide() {
-      hero.style.backgroundImage = `url(${slides[currentSlide]})`;
-      currentSlide = (currentSlide + 1) % slides.length;
-    }
-
-    changeSlide(); // أول صورة
-    setInterval(changeSlide, 4000); // كل 4 ثواني
-  </script>
-  <script>
-    const header = document.querySelector(".header");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
-  </script>
+  <script src="/header-scroll.js"></script>
+  <script src="/hero-slider.js"></script>
   <script src="products.js"></script>
   <script src="/cart/index.js"></script>
 </html>

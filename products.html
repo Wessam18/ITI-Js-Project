@@ -1,58 +1,116 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/cart/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/6183ab3892.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="home.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link rel="stylesheet" href="products.css" />
     <link rel="stylesheet" href="cards.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
   </head>
   <body>
-    <h2>PRODUCT OVERVIEW</h2>
-    <nav class="NavButtons">
-      <div class="ProductsNav">
-        <a data-category="all">All Products</a>
-        <a data-category="women">Women</a>
-        <a data-category="men">Men</a>
-        <a data-category="bag">Bag</a>
-        <a data-category="shoes">Shoes</a>
-        <a data-category="watches">Watches</a>
-      </div>
-      <div class="FilterAndSearch">
-        <input type="text" name="" id="searchIn" placeholder="search" />
-        <button id="search"><i class="material-icons">search</i> Search</button>
-        <button id="filter">
-          <i class="material-icons">wrap_text</i> Filter
-        </button>
-      </div>
+    <!-- ============================== Header ====================================================== -->
+    <header class="header">
+      <nav class="nav">
+        <a href="#"><img src="./images/logo1.webp" alt="logo" /> </a>
+        <div>
+          <ul class="nav_main_menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="nav_icons">
+          <div><i class="fa-solid fa-magnifying-glass"></i></div>
+          <!-- <div class="cart-icon-container" onclick="toggleSideCart()"><i class="fa-solid fa-cart-arrow-down"></i><span id="cartCount">0</span></div> -->
+          <div class="cart-icon-container" onclick="toggleSideCart()">
+            <i class="fa-solid fa-cart-arrow-down"></i
+            ><span id="cartCount">0</span>
+          </div>
+          <!-- ==============================side bar ====================================================== -->
 
-      <div class="filterSidebar">
-        <div class="filterHeader">
-          <h3>Filter</h3>
-          <button class="closeFilter">&times;</button>
+          <section class="products" id="products"></section>
+          <div class="side-cart" id="sideCart">
+            <div class="side-cart-header">
+              <h2>Your Cart</h2>
+              <span class="close" onclick="toggleSideCart()"> × </span>
+            </div>
+            <div id="sideCartItems"></div>
+            <div class="side-cart-footer">
+              <p>Total: $<span id="sideCartTotal">0</span></p>
+              <button onclick="goToCartPage()">Proceed to Cart Page</button>
+            </div>
+          </div>
+          <!-- ==============================end side bar ====================================================== -->
+
+          <div><i class="fa-regular fa-heart"></i></div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="pdts">
+      <h2>PRODUCT OVERVIEW</h2>
+      <nav class="NavButtons">
+        <div class="ProductsNav">
+          <a data-category="all">All Products</a>
+          <a data-category="women">Women</a>
+          <a data-category="men">Men</a>
+          <a data-category="bag">Bag</a>
+          <a data-category="shoes">Shoes</a>
+          <a data-category="watches">Watches</a>
+        </div>
+        <div class="FilterAndSearch">
+          <input type="text" name="" id="searchIn" placeholder="search" />
+          <button id="search">
+            <i class="material-icons">search</i> Search
+          </button>
+          <button id="filter">
+            <i class="material-icons">wrap_text</i> Filter
+          </button>
         </div>
 
-        <div class="filterContent">
-          <p>Price Range</p>
-          <div class="priceRange">
-            <input type="number" class="price" placeholder="$ Min" />
-            <input type="number" class="price" placeholder="$ Max" />
+        <div class="filterSidebar">
+          <div class="filterHeader">
+            <h3>Filter</h3>
+            <button class="closeFilter">&times;</button>
+          </div>
+
+          <div class="filterContent">
+            <p>Price Range</p>
+            <div class="priceRange">
+              <input type="number" class="price" placeholder="$ Min" />
+              <input type="number" class="price" placeholder="$ Max" />
+            </div>
+          </div>
+          <div class="submitFilter">
+            <button id="Apply">Apply</button>
           </div>
         </div>
-        <div class="submitFilter">
-          <button id="Apply">Apply</button>
-        </div>
-      </div>
 
-      <div class="overlay"></div>
-    </nav>
-
-    <section class="cardDiv">
-      <!--
+        <div class="overlay"></div>
+      </nav>
+      <section class="cardDiv">
+        <!--
         <section class="Cards">
             <div class="Img">
                 <img src="assets/women/product-01.webp" alt="">
@@ -60,30 +118,84 @@
                 Quick View
                 </button>
             </div>
-
             <div class="description">
             <div class="CardsTxt">
                 <a href=""> helloo </a>
                 <p>$18.90</p>
             </div>
             <button>
-                    <i class="material-icons">favorite</i>
+              <i class="material-icons">favorite</i>
             </button>
-            
             </div>
         </section> -->
-    </section>
-
-    <section class="popUp">
-      <!-- <div class="popUpContent">
+      </section>
+      <section class="popUp">
+        <!-- <div class="popUpContent">
         <div class="buttonPop"><button class="closeButton" >
             &times;
         </button></div>
     <div class="imgPop"><img src="assets/women/product-01.webp" alt=""></div>
         <p> Item Name</p>
     </div> -->
+      </section>
     </section>
-
-    <script src="products.js"></script>
+    <!-- ============================== Footer ====================================================== -->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_container_rows">
+          <div class="footer_row footer_row_one">
+            <h4>CATEGORIES</h4>
+            <ul>
+              <li>Women</li>
+              <li>Men</li>
+              <li>Shoes</li>
+              <li>Watches</li>
+            </ul>
+          </div>
+          <div class="footer_row footer_row_two">
+            <h4>HELP</h4>
+            <ul>
+              <li>Track Order</li>
+              <li>Returns</li>
+              <li>Shipping</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
+          <div class="footer_row footer_row_three">
+            <h4>GET IN TOUCH</h4>
+            <p>
+              Any questions? Let us know in store at 8th floor, 379 Hudson St,
+              New York, NY 10018 or call us on (+1) 96 716 6879
+            </p>
+            <div class="footer_row_three_icons">
+              <a href="#" title="Facebook"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" title="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" title="Pinterest"
+                ><i class="fa-brands fa-pinterest-p"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer_row footer_row_four">
+            <h4>Newsletter</h4>
+            <form>
+              <div class="footer_row_four_input">
+                <input type="text" placeholder="email@example.com" />
+              </div>
+              <div class="footer_row_four_button">
+                <button type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
+  <script src="/header-scroll.js"></script>
+  <script src="products.js"></script>
+  <script src="/cart/index.js"></script>
 </html>
+<!-- ============================== end Footer ====================================================== -->
