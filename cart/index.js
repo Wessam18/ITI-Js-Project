@@ -1,69 +1,83 @@
+/* ================= CART ================= */
 
-let cart=JSON.parse(localStorage.getItem("cart"))||[];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const productsContainer=document.getElementById("test");
-const sideCart=document.getElementById("sideCart");
-const sideCartItems=document.getElementById("sideCartItems");
-const sideCartTotal=document.getElementById("sideCartTotal");
-const cartCount=document.getElementById("cartCount");
+const productsContainer = document.getElementById("products");
+const sideCart = document.getElementById("sideCart");
+const sideCartItems = document.getElementById("sideCartItems");
+const sideCartTotal = document.getElementById("sideCartTotal");
+const cartCount = document.getElementById("cartCount");
 
-function renderProducts(){
-  productsContainer.innerHTML=" ";
-  test.forEach(p=>{
-    productsContainer.innerHTML+=`
-      <div class="product">
-        <img src="${p.image}">
-         <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <strong>$${p.price}</strong>
-        <button onclick="addToCart(${p.id})">Add to Cart</button>
-      </div>
-    `;
+/* ================= pushProducts ================= */
+
+let pushProducts = [];
+// const gotId = Number(localStorage.getItem("selectedProductId"));
+const gotId = Number(localStorage.getItem("selectedProductId")) || null;
+
+
+/* ================= LOAD JSON ================= */
+
+fetch("products.json")
+  .then(res => res.json())
+  .then(data => {
+    pushProducts = data;
+
+    renderProductDetails();
+    updateCartCount();
+    renderSideCart();
   });
-}
 
+/* ================= RENDER PRODUCT DETAILS ================= */
 
-function saveCart(){
-  localStorage.setItem("cart",JSON.stringify(cart));
-  updateCartCount();
-  renderSideCart();
-}
+function renderProductDetails() {
 
-function addToCart(id){
-  const item=cart.find(i=>i.id===id);
-  if(item) item.qty++;
-  else{
-    const p=test.find(p=>p.id===id);
-    cart.push({...p,qty:1});
-  }
-  saveCart();
-}
+  const product = pushProducts.find(p => p.id === gotId);
 
-function updateCartCount(){
-  const totalQty=cart.reduce((acc,i)=>acc+i.qty,0);
-  cartCount.textContent=totalQty;
-}
-
-function toggleSideCart(){
-  let x = sideCart.classList.toggle("active");
-  console.log(x);
-  renderSideCart();
-}
-
-function renderSideCart(){
-  sideCartItems.innerHTML="";
-  if(cart.length===0){
-    sideCartItems.innerHTML=`<div class="empty-cart">
-      <p>Your cart is empty Go shopping now!</p>
-      <button onclick="goHome()">Go to Home</button>
-    </div>`;
-    sideCartTotal.textContent="0";
+  if (!product) {
+    productsContainer.innerHTML = "<p>Product not found</p>";
     return;
   }
-  let total=0;
-  cart.forEach(item=>{
-    total+=item.price*item.qty;
-    sideCartItems.innerHTML+=`
+
+  productsContainer.innerHTML = `
+    <div class="product">
+      <img src="${product.image}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <strong>$${product.price}</strong>
+      <button onclick="addToCart(${product.id})">Add to Cart</button>
+    </div>
+  `;
+}
+
+
+/* ================= SIDE CART ================= */
+
+function renderSideCart() {
+
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (!sideCartItems) return;
+
+  sideCartItems.innerHTML = "";
+
+  if (cart.length == 0) {
+    sideCartItems.innerHTML = `
+      <div class="empty-cart">
+        <p>Your cart is empty Go shopping now!</p>
+        <button onclick="goHome()">Go to Home</button>
+      </div>
+    `;
+    sideCartTotal.textContent = "0";
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach(item => {
+
+    total += item.price * item.qty;
+
+    sideCartItems.innerHTML += `
       <div class="cart-item">
         <img src="${item.image}">
         <div class="cart-item-info">
@@ -78,27 +92,106 @@ function renderSideCart(){
       </div>
     `;
   });
-  sideCartTotal.textContent=total;
+
+  sideCartTotal.textContent = total.toFixed(2);
 }
 
-function increaseQty(id){
-  cart.find(i=>i.id===id).qty++; saveCart();
+
+/* ================= CART FUNCTIONS ================= */
+
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  renderSideCart();
 }
-function decreaseQty(id){
-  const item=cart.find(i=>i.id===id);
-   if(item.qty>1)item.qty--; 
-   else removeItem(id); saveCart();
+
+function addToCart(id) {
+
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const item = cart.find(i => i.id === id);
+
+  if (item) {
+    item.qty++;
+  } else {
+
+    const product = pushProducts.find(p => p.id === id);
+
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image || product.img?.[0],
+      qty: 1
+    });
+  }
+
+  saveCart();
 }
-function removeItem(id){
-  cart=cart.filter(i=>i.id!==id); saveCart();
-}
-function goToCartPage(){
-  if(cart.length===0) return; window.location.href="cart.html";
-}
-function goHome(){toggleSideCart(); window.scrollTo({top:0,behavior:"smooth"});}
 
 
-renderProducts();
-renderSlider();
-updateCartCount();
-renderSideCart();
+/* ================= CART CONTROLS ================= */
+function toggleSideCart() {
+  renderSideCart();
+  sideCart.classList.toggle("active");
+}
+
+function updateCartCount() {
+  const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+  if (cartCount) cartCount.textContent = totalQty;
+}
+
+
+function increaseQty(id) {
+  const item = cart.find(i => i.id === id);
+  item.qty++;
+  saveCart();
+}
+
+function decreaseQty(id) {
+  const item = cart.find(i => i.id === id);
+
+  if (item.qty > 1) {
+    item.qty--;
+  } else {
+    removeItem(id);
+    return;
+  }
+
+  saveCart();
+}
+
+function removeItem(id) {
+  // Always read latest cart first
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+  renderSideCart();
+}
+
+function closeCart () {
+sideCart.classList.toggle("active");
+}
+
+/* ================= NAVIGATION ================= */
+
+function goToCartPage() {
+  if (cart.length === 0) return;
+  window.location.href = "cart.html";
+}
+
+function goHome() {
+  toggleSideCart();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cartIcon = document.querySelector(".cart-icon-container");
+  const closeBtn = document.querySelector(".side-cart .close");
+  const goToCartBtn = document.getElementById("goToCartPageBtn");
+
+  if(cartIcon) cartIcon.addEventListener("click", toggleSideCart);
+  if(closeBtn) closeBtn.addEventListener("click", closeCart);
+  if(goToCartBtn) goToCartBtn.addEventListener("click", goToCartPage);
+});
