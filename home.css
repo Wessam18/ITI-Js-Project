@@ -66,9 +66,10 @@ a:hover {
   display: flex;
   justify-content: flex-end;
 }
-.nav_icons > div {
-  padding: 0px 11px 0px 22px;
-}
+
+ .nav_icons i{
+   padding: 0px 11px 0px 22px;
+ }
 .fa-regular,
 .fa-solid {
   font-size: 26px;

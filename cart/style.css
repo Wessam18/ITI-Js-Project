@@ -11,7 +11,7 @@ header{
   justify-content:space-between;
   align-items:center;
   background:#1f2937;
-  color:#22d3ee;
+  color:#033046;
 }
 
 .cart-icon-container{
@@ -70,7 +70,7 @@ header{
 .product button{
   margin-top:10px;
   width:100%;
-  background:#22d3ee;
+  background:#033046;
   border:none;
   padding:10px;
   cursor:pointer;
@@ -81,7 +81,7 @@ header{
 }
 .product button:hover{
   background: #020617;
-  color: #22d3ee;
+  color: #033046;
 }
 
 .side-cart{
@@ -102,14 +102,19 @@ header{
   right:0;
 }
 
-.side-cart-header{
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#1f2937;
-  color:white;
+
+ .side-cart-header {
+    width: 100%;          
+    padding: 20px;        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2937;
+    color: white;
+    box-sizing: border-box; 
+    margin: 0;            
 }
+
 
 .side-cart-header .close{
   cursor:pointer;
@@ -147,19 +152,24 @@ header{
   padding:4px 8px;
   margin:0 2px;
   border:none;
-  background:#22d3ee;
+  background:#033046;
   color:white;
   cursor:pointer;
   border-radius:5px;
 }
 
 .side-cart-footer{
-  padding:20px;
-  border-top:1px solid #ccc;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+ 
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2937;
+    color: white;
+    width: 100%;
+    margin: 0;
 }
+
 
 .side-cart-footer button{
   padding:10px;
@@ -179,7 +189,7 @@ header{
 
 .empty-cart button{
   margin-top:10px;
-  background:#22d3ee;
+  background:#033046;
   color:white;
   border:none;
   padding:8px 15px;

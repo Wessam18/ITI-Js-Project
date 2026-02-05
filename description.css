@@ -127,9 +127,9 @@
 }
 
 .cart-buttons .quantity button:hover{
-  background: #00cbe6;
+  background: #717fe0;
   color: #fff;
-  border-color: #00c4e6;
+  border-color: #033046;
 }
 
 .cart-buttons .add-cart{
