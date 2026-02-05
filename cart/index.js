@@ -7,6 +7,7 @@ const sideCart = document.getElementById("sideCart");
 const sideCartItems = document.getElementById("sideCartItems");
 const sideCartTotal = document.getElementById("sideCartTotal");
 const cartCount = document.getElementById("cartCount");
+const NavCart = document.getElementById("NavCart");
 
 /* ================= pushProducts ================= */
 
@@ -96,7 +97,7 @@ function renderSideCart() {
   sideCartTotal.textContent = total.toFixed(2);
 }
 
-
+document.getElementById("cartCount").innerHTML=`${cart.length}`
 /* ================= CART FUNCTIONS ================= */
 
 function saveCart() {
@@ -191,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector(".side-cart .close");
   const goToCartBtn = document.getElementById("goToCartPageBtn");
 
+  if(NavCart) NavCart.addEventListener("click", toggleSideCart)
   if(cartIcon) cartIcon.addEventListener("click", toggleSideCart);
   if(closeBtn) closeBtn.addEventListener("click", closeCart);
   if(goToCartBtn) goToCartBtn.addEventListener("click", goToCartPage);

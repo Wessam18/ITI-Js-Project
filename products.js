@@ -12,6 +12,7 @@ res.onreadystatechange = function readyProd () {
     var products = JSON.parse(res.responseText);
     console.log(products);}
 
+
 //  ============================== pop up window (quick view) =============================
 
 
@@ -242,22 +243,27 @@ function displayBags(){
 
 
 
+
 function display(){
     if (document.querySelector(".cardDiv")?.childElementCount < products.length) {
                         if (products.length > 5) {
                         displayAll(6);
+                                
                         const btnadd = document.querySelector(".cardDiv")
+                        if (window.location.pathname.includes("home.html")){
+                                    btnadd.innerHTML += ``
+                                }else {
                         btnadd.innerHTML += `
-                        <div class="loadMoreDiv">
+                        <div class="loadMoreDiv" id="load">
                             <button class="loadMore">
                                 Load More
                             </button>
                         </div>
                         `
-                        document.querySelector(".loadMore").addEventListener("click", function(){
+                        document.querySelector("#load").addEventListener("click", function(){
                             document.querySelector(".cardDiv").innerHTML = ""
                             displayAll(products.length)
-                        })
+                        })}
                     } else{
                             document.querySelector(".cardDiv").innerHTML = ""
                             displayAll(products.length);
@@ -268,6 +274,9 @@ function display(){
                 return
             }
 }
+
+
+
 
 display()
 
@@ -365,7 +374,7 @@ function search (){
     var searchInput = document.querySelector("#searchIn").value
     document.querySelector(".cardDiv").innerHTML = ""
     for(i=0; i<products.length; i++){
-        if(products[i].name.includes(searchInput)){
+        if(products[i].name.toLowerCase().includes(searchInput)){
             document.querySelector(".cardDiv").innerHTML +=
         `
                 <section class="Cards">
